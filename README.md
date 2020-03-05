@@ -67,7 +67,15 @@
  # Starting Container
  ./mssql-ctl.sh start test_db
  ```
+
+### Pushing your image to docker hub.
+ If the folder containing your cloned repo is named the same as your Docker Username, your instance is ready to be pushed to Docker Home. 
  
+ Create a repository named sqlserver on Docker Home and then run the following command (replacing **yourusername** with your actual username):
+ ```
+ docker image push yourusername/sqlserver:2019-latest
+ ```
+
 ### Removing Containers & Image
 ```
 # Manually stop and erase container
@@ -77,4 +85,7 @@ docker container stop express_db && docker container rm express_db
 
 # Remove the remaining container and the image (optionally)
 ./remove-all.sh test_db
+
+# Optionally remove the volume previously created
+docker volume rm mssql-vol
 ```
