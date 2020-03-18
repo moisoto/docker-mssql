@@ -5,11 +5,7 @@ tag=2019-latest
 show_sintax () {
     echo
     echo 'Sintax:'
-    echo "$0 container_name 'sa_password' [port]"
-    echo
-    echo "*********************************************************************"
-    echo "*** NOTE: The password MUST be specified inside single quotes (') ***"
-    echo "*********************************************************************"
+    echo "$0 container_name"
     echo
     echo "Current Containers:"
     docker container ls -af publish=1433 --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}\t{{.Names}}"
